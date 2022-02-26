@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mainapp',
-    'backetapp',
+    'basketapp',
     'authapp',
 ]
 
