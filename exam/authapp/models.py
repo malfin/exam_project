@@ -58,6 +58,7 @@ class KpkUser(AbstractUser):
     surname = models.CharField('surname', max_length=150)
     email = models.EmailField('email address')
     patronymic = models.CharField('patronymic', max_length=150, blank=True)
+    rules = models.BooleanField('rules', default=True)
 
     def get_full_name(self):
         """
