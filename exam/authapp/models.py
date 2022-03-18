@@ -43,7 +43,7 @@ class KpkUser(AbstractUser):
     last_name = None
 
     login = models.CharField(
-        'username',
+        verbose_name='Логин',
         max_length=150,
         unique=True,
         help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.',
@@ -54,11 +54,11 @@ class KpkUser(AbstractUser):
     )
     USERNAME_FIELD = 'login'
 
-    name = models.CharField('name', max_length=150, )
-    surname = models.CharField('surname', max_length=150)
-    email = models.EmailField('email address')
-    patronymic = models.CharField('patronymic', max_length=150, blank=True)
-    rules = models.BooleanField('rules', default=True)
+    name = models.CharField('Имя', max_length=150, )
+    surname = models.CharField('Фамилия', max_length=150)
+    email = models.EmailField('Email')
+    patronymic = models.CharField('Отчество', max_length=150, blank=True)
+    rules = models.BooleanField('Даю согласие на обработку персональных данных', default=True)
 
     def get_full_name(self):
         """
