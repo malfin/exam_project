@@ -6,6 +6,10 @@
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
+            <p>
+                <label for="id_rules">Согласен с правилами регистрации:</label>
+                <input type="checkbox" name="rules" class="form-check-input rules" id="id_rules" required>
+            </p>
             <button class="btn btn-success" type="submit">Зарегистрироваться</button>
         </form>
     </div>

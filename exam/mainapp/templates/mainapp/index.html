@@ -1,5 +1,44 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 {% block content %}
-Index
+    <h3>Каталог</h3>
+    <div class="row">
+        <div class="col">
+            <select class="form-select" aria-label="Sort by products">
+                <option>Сортировать товар</option>
+                <option value="year_of_issue"
+                        {% if request.session.places_order_type == 'year_of_issue' %}selected{% endif %}>По году
+                    производства
+                </option>
+                <option value="name" {% if request.session.places_order_type == 'name' %}selected{% endif %}>По
+                    наименованию
+                </option>
+                <option value="price" {% if request.session.places_order_type == 'price' %}selected{% endif %}>По цене
+                </option>
+            </select>
+
+        </div>
+        <div class="col">
+            <select class="form-select" aria-label="Sort by category">
+                <option>Сортировать товар по категориям:</option>
+                <option value="laser">Лазерный принтер</option>
+                <option value="jet">Струйный принтер</option>
+                <option value="thermo">Термопринтеры</option>
+            </select>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between flex-wrap align-content-center mt-3">
+        {% for item in products %}
+            <div class="card">
+                <a href="{% url 'mainapp:select_product' item.id %}">
+                    <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.price }} руб.</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+
+    </div>
 {% endblock %}

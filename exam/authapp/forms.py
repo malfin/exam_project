@@ -19,8 +19,7 @@ class LoginForm(AuthenticationForm):
             item.help_text = ''
 
 
-class RegisterForm(UserCreationForm, forms.ModelForm):
-    rules = forms.CheckboxInput()
+class RegisterForm(UserCreationForm):
 
     class Meta:
         model = KpkUser
@@ -32,7 +31,6 @@ class RegisterForm(UserCreationForm, forms.ModelForm):
             'surname',
             'email',
             'patronymic',
-            'rules'
         )
 
     def __init__(self, *args, **kwargs):

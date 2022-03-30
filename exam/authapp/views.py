@@ -40,4 +40,4 @@ def register(request):
 @login_required
 def logout(request):
     auth.logout(request)
-    return HttpResponseRedirect(reverse('mainapp:index'))
+    return HttpResponseRedirect(reverse('mainapp:about'))
