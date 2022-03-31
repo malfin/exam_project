@@ -17,7 +17,7 @@ body {
     margin-bottom: 18px;
     width: 18rem;
     background: #ffffff;
-    min-height: 18rem;
+    min-height: 20rem;
     border-radius: 5px;
     transition: all .3s ease-in-out;
 }

@@ -38,6 +38,9 @@
                     </li>
                 {% else %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'authapp:logout' %}">Корзина</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'authapp:logout' %}">{{ user.login }} | Выйти</a>
                     </li>
                 {% endif %}
